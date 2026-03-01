@@ -1,0 +1,215 @@
+/* Один файл стилей без миксинов/partial'ов */
+
+/* Подключение шрифта SN Pro
+   Положи файлы, например:
+   - src/assets/fonts/SNPro-Regular.woff2
+   - src/assets/fonts/SNPro-Medium.woff2
+   - src/assets/fonts/SNPro-Bold.woff2
+*/
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=SN+Pro:ital,wght@0,200..900;1,200..900&display=swap');
+
+:root {
+  --tg-theme-bg-color: #ffffff;
+  --tg-theme-text-color: #000000;
+  --tg-theme-hint-color: #707579;
+  --tg-theme-link-color: #3390ec;
+  --tg-theme-button-color: #3390ec;
+  --tg-theme-button-text-color: #ffffff;
+  --tg-theme-secondary-bg-color: #f1f1f1;
+
+  --border-color: #e0e0e0;
+}
+
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -ms-overflow-style: none; /* IE и Edge */
+  scrollbar-width: none; /* Firefox */
+  transition: 0.25s all ease;
+  
+  /* Запрет выделения текста */
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Old versions of Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version */
+  
+  /* Запрет перетаскивания */
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  
+  /* Убираем подсветку при тапе на мобильных */
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Разрешаем выделение только в полях ввода */
+input, 
+select, 
+textarea,
+[contenteditable="true"] {
+  -webkit-user-select: text;
+  -khtml-user-select: text;
+  -moz-user-select: text;
+  -ms-user-select: text;
+  user-select: text;
+  -webkit-user-drag: auto;
+  user-drag: element;
+}
+
+*::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+html, body {
+  overflow: hidden; /* Убираем скролл на уровне страницы */
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  
+  /* Дополнительная защита от выделения */
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+#app {
+  height: 100vh;
+  overflow-y: auto; /* Оставляем скролл внутри приложения, но без ползунка */
+  -webkit-overflow-scrolling: touch; /* Для плавного скролла на iOS */
+}
+
+/* Типография */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  line-height: 1.2;
+  margin-bottom: 16px;
+}
+
+h1 { font-size: 24px; }
+h2 { font-size: 20px; }
+h3 { font-size: 18px; }
+
+p {
+  line-height: 1.5;
+  margin-bottom: 16px;
+}
+
+a {
+  color: var(--tg-theme-link-color, #3390ec);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Формы */
+input,
+select,
+textarea,
+button {
+  font-family: inherit;
+  font-size: 16px; /* предотвращает zoom на iOS */
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  padding: 8px 0;
+  border: 1px solid var(--border-color, #e0e0e0);
+  border-radius: 8px;
+  background: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #000000);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--tg-theme-button-color, #3390ec);
+}
+
+/* Утилиты (по желанию) */
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+.text-left { text-align: left; }
+
+/* Глобальные стили для Telegram Mini App */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'SN Pro', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  background: var(--tg-theme-bg-color, #ffffff);
+  color: var(--tg-theme-text-color, #000000);
+  overflow-x: hidden;
+}
+
+/* Анимации */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.3s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+  width: 6px;
+  display: none; /* Скрываем скролл */
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--tg-theme-hint-color, #999999);
+  border-radius: 3px;
+}
+
+/* Дополнительная защита от выделения для изображений */
+img {
+  -webkit-user-drag: none;
+  -khtml-user-drag: none;
+  -moz-user-drag: none;
+  -o-user-drag: none;
+  user-drag: none;
+  pointer-events: none; /* Запрещаем взаимодействие с картинками */
+}
+
+/* Запрещаем выделение в псевдоэлементах */
+::before,
+::after {
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  pointer-events: none;
+}
+
+/* Защита от контекстного меню (дополнительно) */
+.no-context-menu {
+  -webkit-touch-callout: none;
+}
+
+/* Защита от выделения на мобильных устройствах */
+@media (max-width: 768px) {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+.product-list-leave-active {
+  position: absolute;
+}

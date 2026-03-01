@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Telegram Mini App</title>
+    <!-- Добавь этот скрипт -->
+    <script src="https://telegram.org/js/telegram-web-app.js"></script>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+
+  <script>
+    // Для отладки
+    window.addEventListener('load', () => {
+      console.log('Window loaded, Telegram available:', !!window.Telegram?.WebApp)
+      if (window.Telegram?.WebApp) {
+        console.log('Telegram initData:', window.Telegram.WebApp.initData ? 'present' : 'missing')
+        console.log('Telegram user:', window.Telegram.WebApp.initDataUnsafe?.user)
+      }
+    })
+  </script>
+</html>
