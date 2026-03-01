@@ -1,0 +1,14 @@
+{
+  "welcome_age": "Привет, {username}! Вам есть 18 лет?\n\nSveiki, {username}! Vai jums ir 18 gadi?",
+  "access_denied": "Доступ запрещён.\n\nPieeja liegta.",
+  "choose_lang": "Выберите язык\n\nIzvēlieties valodu",
+  "welcome_final": "Gatavs! Esiet sveicināti!",
+  "open_miniapp": "Atveriet lietojumprogrammu",
+  "btn_change_lang": "🌐 Mainīt valodu",
+  "btn_admin_panel": "🔑 Admin Panelis",
+  "seller_panel_main": "📦 <b>Pārdevēja panelis</b>\nIzvēlieties darbību:",
+  "btn_disable_broadcast": "❌ Atteikties no paziņojumiem",
+  "btn_enable_broadcast": "✅ Saņemt paziņojumus",
+  "broadcast_disabled_success": "Jūs atteicāties no administratora paziņojumiem.",
+  "broadcast_enabled_success": "Jūs atkal saņemsiet administratora paziņojumus."
+} 
